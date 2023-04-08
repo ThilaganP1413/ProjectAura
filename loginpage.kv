@@ -1,0 +1,82 @@
+#:kivy 2.2.0
+Screen:
+    MDBoxLayout:
+        canvas.before:
+            Rectangle:
+                source: "Assets\LightBluePurple_Gradient.png"
+                pos: self.pos
+                size: self.size
+        size_hint:(1,1)
+        orientation: 'horizontal'
+
+        Widget:
+            size_hint:(0.1,1)
+
+        MDCard:
+            size_hint: (0.8,0.8)
+            pos_hint:{"center_x":0.5 , "center_y":0.5}
+            #elevation: 1
+            orientation: 'vertical'
+            
+            Widget:
+                size:(root.x,10)
+
+            MDLabel:
+                text: 'Welcome'
+                font_size: 50
+                font_name: "Assets\HomepageBaukasten-Bold.ttf"
+                halign:'center'
+                padding_y : 20
+
+            Widget:
+                size:(root.x,10)
+
+            MDTextField:
+                hint_text:"User Name or Email"
+                icon_left: "account"
+                size_hint: 0.6,None
+                font_size: 18
+                pos_hint:{"center_x":0.5}
+
+            MDTextField:
+                hint_text:"Password"
+                foreground_color: (0,0,0,0)
+                icon_left: "lock"
+                size_hint: 0.6,None
+                font_size: 18
+                pos_hint:{"center_x":0.5}
+                password: True
+
+            Widget:
+                size:(root.x,5)
+
+            MDRoundFlatButton:
+                text:"Login"
+                font_size: 14
+                line_width : 0.0001
+                size_hint:(0.4,None)
+                pos_hint:{"center_x":0.5}
+                md_bg_color: (204/255,51/255,1,1)
+                text_color: (1,1,1,1)
+            
+            MDLabel:
+                text:"New User?"
+                font_size: 14
+                halign:"center"
+                size:(root.x,50)
+            
+            MDRoundFlatButton:
+                text:"Sign Up"
+                line_width : 0.0001
+                font_size: 14
+                size_hint:(0.4,None)
+                pos_hint:{"center_x":0.5}
+                md_bg_color: (204/255,51/255,1,1)
+                text_color: (1,1,1,1)
+
+            Widget:
+                size:(root.x,10) 
+
+        Widget:
+            size_hint:(0.1,1)
+        
