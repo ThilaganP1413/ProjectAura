@@ -1,15 +1,8 @@
-import kivy
-from kivy.app import App
-from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+from kivymd.app import MDApp
 
-
-class MyLayout(Widget):
-    pass
-
-class HomePage(App):
+class HomePage(MDApp):
     def build(self):
-        return MyLayout()
+        return Builder.load_file('homepage.kv')
     
-if __name__ == "__main__":
-    HomePage().run()
+HomePage().run()
