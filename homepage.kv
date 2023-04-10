@@ -15,7 +15,7 @@ BoxLayout:
                 source: "Assets\LightBluePurple_Gradient.png"
 				radius: [0,0,250,250]
 
-		Widget:
+		Widget: 
 	        adaptive_height: True
             size_hint_y:0.3
 
@@ -66,6 +66,15 @@ BoxLayout:
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
                     md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Start Session'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
 
                 Widget:
                     adaptive_height: True
@@ -73,10 +82,19 @@ BoxLayout:
 
                 MDCard:
                     #elevation: 1
-                    size_hint_y: 0.4
+                    size_hint_y:0.4
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Schedules'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
                 
                 Widget:
                     adaptive_height: True
@@ -96,22 +114,40 @@ BoxLayout:
                     size_hint_y:0.07
 
                 MDCard:
-                    elevation: 1
+                    #elevation: 1
                     size_hint_y:0.4
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Progress'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
 
                 Widget:
                     adaptive_height: True
                     size_hint_y: 0.05
 
                 MDCard:
-                    elevation: 1
-                    size_hint_y: 0.4
+                    #elevation: 1
+                    size_hint_y:0.4
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Exercises'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
                 
                 Widget:
                     adaptive_height: True
@@ -131,27 +167,45 @@ BoxLayout:
                     size_hint_y:0.07
 
                 MDCard:
-                    elevation: 1
+                    #elevation: 1
                     size_hint_y:0.4
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Quick Consult'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
 
                 Widget:
                     adaptive_height: True
                     size_hint_y: 0.05
 
                 MDCard:
-                    elevation: 1
-                    size_hint_y: 0.4
+                    #elevation: 1
+                    size_hint_y:0.4
                     size_hint_x:0.8
                     pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    md_bg_color: (161/255, 231/255, 240/255, 1)
+                    orientation : 'vertical'
+
+                    MDLabel:
+                        text: 'Therapist'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'top'
+                        halign: 'center'
+                        height: self.texture_size[1]
                 
                 Widget:
                     adaptive_height: True
                     size_hint_y:0.07
-
+#This Needs to be changed -----------------------------------------------------------------------------------------------------
         MDBottomNavigationItem:
 			name:"Profile"
 			text:"Profile"
