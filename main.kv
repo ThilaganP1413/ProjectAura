@@ -1,0 +1,366 @@
+#:kivy 2.2.0
+ScreenManager:
+    id: screen_manager
+    LoginPage:
+    HomePage:
+
+#LoginPage STARTS ------------------------------------------------------------------
+<LoginPage>:
+    name:'LoginPage'
+    MDBoxLayout:
+        canvas.before:
+            Rectangle:
+                source: "Assets\LightBluePurple_Gradient.png"
+                pos: self.pos
+                size: self.size
+        size_hint:(1,1)
+        orientation: 'horizontal'
+
+        Widget:
+            size_hint:(0.1,1)
+
+        MDCard:
+            size_hint: (0.8,0.8)
+            pos_hint:{"center_x":0.5 , "center_y":0.5}
+            #elevation: 1
+            orientation: 'vertical'
+            
+            Widget:
+                size:(root.x,10)
+
+            MDLabel:
+                text: 'Welcome'
+                font_size: 50
+                font_name: "Assets\HomepageBaukasten-Bold.ttf"
+                halign:'center'
+                padding_y : 20
+
+            Widget:
+                size:(root.x,10)
+
+            MDTextField:
+                hint_text:"User Name or Email"
+                icon_left: "account"
+                size_hint: 0.6,None
+                font_size: 18
+                pos_hint:{"center_x":0.5}
+
+            MDTextField:
+                hint_text:"Password"
+                icon_left: "lock"
+                size_hint: 0.6,None
+                font_size: 18
+                pos_hint:{"center_x":0.5}
+                password: True
+
+            Widget:
+                size:(root.x,5)
+
+            MDRoundFlatButton:
+                text:"Login"
+                font_size: 14
+                line_width : 0.0001
+                size_hint:(0.4,None)
+                pos_hint:{"center_x":0.5}
+                md_bg_color: (204/255,51/255,1,1)
+                text_color: (1,1,1,1)
+                on_release: app.root.current = 'HomePage'
+            
+            MDLabel:
+                text:"New User?"
+                font_size: 14
+                halign:"center"
+                size:(root.x,50)
+            
+            MDRoundFlatButton:
+                text:"Sign Up"
+                line_width : 0.0001
+                font_size: 14
+                size_hint:(0.4,None)
+                pos_hint:{"center_x":0.5}
+                md_bg_color: (204/255,51/255,1,1)
+                text_color: (1,1,1,1)
+
+            Widget:
+                size:(root.x,10) 
+
+        Widget:
+            size_hint:(0.1,1)
+
+
+#HomePage STARTS ------------------------------------------------------------------
+<HomePage>:
+    name:'HomePage'
+    BoxLayout:
+        orientation:'vertical'
+
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.4
+            elevation:10
+
+            canvas.before:
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: "Assets\LightBluePurple_Gradient.png"
+                    radius: [0,0,250,250]
+
+            Widget: 
+                adaptive_height: True
+                size_hint_y:0.3
+
+            Label:
+                text: 'Next Session In:'
+                font_name:"Assets\HomepageBaukasten-Book.ttf"
+                font_size: sp(20)* root.width / dp(360)
+                color: 1, 1, 1, 1
+                size_hint_y: None
+                height: self.texture_size[1]
+                valign:'center'
+
+            Label:
+                text: '00 : 00 : 00 : 00'
+                font_name:"Assets\HomepageBaukasten-Book.ttf"
+                font_size: sp(30) * root.width / dp(360)
+                color: 1, 1, 1, 1
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            Widget:
+                adaptive_height: True
+                size_hint_y:0.3
+
+
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:"Sessions"
+                text:"Sessions"
+                icon:"Assets\SessionIcon.png" 
+                BoxLayout:
+                    orientation:'vertical'
+                    pos_hint :{'center_x': 0.5, 'center_y':0.5}
+                    # canvas:
+                    # 	Color:
+                    # 		rgba: 1, 0, 0, 1
+                    # 	Rectangle:
+                    # 		pos: self.pos
+                    # 		size: self.size
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Start Session'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y: 0.05
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Schedules'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+                    
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+            MDBottomNavigationItem:
+                name:"Logs"
+                text:"Logs"
+                icon:"Assets\LogsIcon.png"
+
+                BoxLayout:
+                    orientation:'vertical'
+                    pos_hint :{'center_x': 0.5, 'center_y':0.5}
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Progress'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y: 0.05
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Exercises'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+                    
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+            MDBottomNavigationItem:
+                name:"Consult"
+                text:"Consult"
+                icon:"Assets\ConsultIcon.png"
+
+                BoxLayout:
+                    orientation:'vertical'
+                    pos_hint :{'center_x': 0.5, 'center_y':0.5}
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Quick Consult'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y: 0.05
+
+                    MDCard:
+                        #elevation: 1
+                        size_hint_y:0.4
+                        size_hint_x:0.8
+                        pos_hint: {'center_x': 0.5}
+                        md_bg_color: (161/255, 231/255, 240/255, 1)
+                        orientation : 'vertical'
+
+                        MDLabel:
+                            text: 'Therapist'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'top'
+                            halign: 'center'
+                            height: self.texture_size[1]
+                    
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+            MDBottomNavigationItem:
+                name:"Profile"
+                text:"Profile"
+                icon:"Assets\ProfieIcon.png"
+
+                BoxLayout:
+                    orientation:'vertical'
+                    pos_hint: {'center_x': 0.5,'center_y':0.5}
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+
+                    MDCard:
+                        size_hint_y: 0.4
+                        size_hint_x:0.8
+                        pos_hint : {'center_x': 0.5}
+                        md_bg_color: [161/255, 231/255, 240/255, 1] 
+
+                        MDLabel:
+                            text: 'Profile'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(50)* root.width / dp(360)
+                            valign : 'center'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+
+                    MDCard:
+                        size_hint_y: 0.2
+                        size_hint_x:0.8
+                        pos_hint : {'center_x': 0.5}
+                        md_bg_color: [161/255, 231/255, 240/255, 1] 
+                        MDLabel:
+                            text: 'Setting'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(40)* root.width / dp(360)
+                            valign : 'center'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
+
+                    MDCard:
+                        size_hint_y: 0.2
+                        size_hint_x:0.8
+                        pos_hint : {'center_x': 0.5}
+                        md_bg_color: [161/255, 231/255, 240/255, 1] 
+                        MDLabel:
+                            text: 'About'
+                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_size: sp(40)* root.width / dp(360)
+                            valign : 'center'
+                            halign: 'center'
+                            height: self.texture_size[1]
+
+                    Widget:
+                        adaptive_height: True
+                        size_hint_y:0.07
