@@ -205,7 +205,7 @@ BoxLayout:
                 Widget:
                     adaptive_height: True
                     size_hint_y:0.07
-#This Needs to be changed -----------------------------------------------------------------------------------------------------
+
         MDBottomNavigationItem:
 			name:"Profile"
 			text:"Profile"
@@ -213,30 +213,62 @@ BoxLayout:
 
             BoxLayout:
                 orientation:'vertical'
-                pos_hint :{'center_x': 0.5, 'center_y':0.5}
+                pos_hint: {'center_x': 0.5,'center_y':0.5}
+
+                Widget:
+                    adaptive_height: True
+                    size_hint_y:0.07
+
+
+                MDCard:
+                    size_hint_y: 0.4
+                    size_hint_x:0.8
+                    pos_hint : {'center_x': 0.5}
+                    md_bg_color: [161/255, 231/255, 240/255, 1] 
+
+                    MDLabel:
+                        text: 'Profile'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(50)* root.width / dp(360)
+                        valign : 'center'
+                        halign: 'center'
+                        height: self.texture_size[1]
+
+                Widget:
+                    adaptive_height: True
+                    size_hint_y:0.07
+
+
+                MDCard:
+                    size_hint_y: 0.2
+                    size_hint_x:0.8
+                    pos_hint : {'center_x': 0.5}
+                    md_bg_color: [161/255, 231/255, 240/255, 1] 
+                    MDLabel:
+                        text: 'Setting'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(40)* root.width / dp(360)
+                        valign : 'center'
+                        halign: 'center'
+                        height: self.texture_size[1]
 
                 Widget:
                     adaptive_height: True
                     size_hint_y:0.07
 
                 MDCard:
-                    elevation: 1
-                    size_hint_y:0.4
+                    size_hint_y: 0.2
                     size_hint_x:0.8
-                    pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
+                    pos_hint : {'center_x': 0.5}
+                    md_bg_color: [161/255, 231/255, 240/255, 1] 
+                    MDLabel:
+                        text: 'About'
+                        font_name : "Assets\BebasNeue-Regular.ttf"
+                        font_size: sp(40)* root.width / dp(360)
+                        valign : 'center'
+                        halign: 'center'
+                        height: self.texture_size[1]
 
-                Widget:
-                    adaptive_height: True
-                    size_hint_y: 0.05
-
-                MDCard:
-                    elevation: 1
-                    size_hint_y: 0.4
-                    size_hint_x:0.8
-                    pos_hint: {'center_x': 0.5}
-                    md_bg_color: (161/255, 239/255, 227/255, 1)
-                
                 Widget:
                     adaptive_height: True
                     size_hint_y:0.07
