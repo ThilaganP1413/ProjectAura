@@ -3,6 +3,10 @@ ScreenManager:
     id: screen_manager
     LoginPage:
     HomePage:
+    Progress:
+    Exercises:
+    QuickConsult:
+    Schedules:
 
 #LoginPage STARTS ------------------------------------------------------------------
 <LoginPage>:
@@ -90,6 +94,7 @@ ScreenManager:
 
 #HomePage STARTS ------------------------------------------------------------------
 <HomePage>:
+
     name:'HomePage'
     BoxLayout:
         orientation:'vertical'
@@ -179,6 +184,7 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
+                        on_release: app.root.current = 'Schedules'
 
                         MDLabel:
                             text: 'Schedules'
@@ -212,6 +218,7 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
+                        on_release: app.root.current = 'Progress'
 
                         MDLabel:
                             text: 'Progress'
@@ -232,6 +239,7 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
+                        on_release: app.root.current = 'Exercises'
 
                         MDLabel:
                             text: 'Exercises'
@@ -265,6 +273,7 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
+                        on_release: app.root.current = 'QuickConsult'
 
                         MDLabel:
                             text: 'Quick Consult'
@@ -364,3 +373,119 @@ ScreenManager:
                     Widget:
                         adaptive_height: True
                         size_hint_y:0.07
+
+#Progress STARTS ------------------------------------------------------------------
+<Progress>:
+    name:'Progress'
+#Exercises STARTS ------------------------------------------------------------------
+<Exercises>:
+    name:'Exercises'
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+#QuickConsult STARTS ------------------------------------------------------------------
+<QuickConsult>:
+    name:'QuickConsult'
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            MDList:
+                id: message_list
+        BoxLayout:
+            orientation: 'horizontal'
+            MDTextField:
+                id: message_text
+                hint_text: 'Type a message...'
+            MDFloatingActionButton:
+                icon: 'send'
+                #on_release: app.send_message()
+
+
+#Schedules STARTS ------------------------------------------------------------------
+<Schedules>:
+    name:'Schedules'
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"
+            OneLineListItem:
+                text: "Item 1"
+            OneLineListItem:
+                text: "Item 2"
+            OneLineListItem:
+                text: "Item 3"

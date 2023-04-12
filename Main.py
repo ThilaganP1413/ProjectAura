@@ -8,6 +8,18 @@ class LoginPage(Screen):
 class HomePage(Screen):
     pass
 
+class Exercises(Screen):
+    pass
+
+class Progress(Screen):
+    pass
+
+class QuickConsult(Screen):
+    pass
+
+class Schedules(Screen):
+    pass
+
 class WindowManager(ScreenManager):
     pass
 class AuraMain(MDApp):
