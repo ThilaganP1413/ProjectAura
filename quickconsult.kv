@@ -1,0 +1,14 @@
+#:kivy 2.2.0
+BoxLayout:
+    orientation: 'vertical'
+    ScrollView:
+        MDList:
+            id: message_list
+    BoxLayout:
+        orientation: 'horizontal'
+        MDTextField:
+            id: message_text
+            hint_text: 'Type a message...'
+        MDFloatingActionButton:
+            icon: 'send'
+            #on_release: app.send_message()
