@@ -1,6 +1,8 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen , ScreenManager
+from kivymd.uix.menu import MDDropdownMenu
+from kivy.metrics import dp
 
 class LoginPage(Screen):
     pass
@@ -28,6 +30,9 @@ class Schedules(Screen):
     def on_back_button(self):
         self.manager.current = 'HomePage'
         self.manager.transition.direction = 'right'
+
+    def spinner_clicked(self,value):
+        pass
 
 class WindowManager(ScreenManager):
     pass

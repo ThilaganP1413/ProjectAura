@@ -438,59 +438,62 @@ ScreenManager:
 #Schedules STARTS ------------------------------------------------------------------
 <Schedules>:
     name:'Schedules'
-    BoxLayout:
-        orientation: "vertical"
+    MDScreen:
+        BoxLayout:
+            orientation: "vertical"
 
-        MDTopAppBar:
-            title: "Schedules"
-            left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
-            
-        ScrollView:
-            MDList:
-                TwoLineIconListItem:
-                    text: "Item 1"
-                    secondary_text:'line2'
-                    ImageLeftWidget: #256x256 png image only!!!!
-                        source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
-                OneLineListItem:
-                    text: "Item 1"
-                OneLineListItem:
-                    text: "Item 2"
-                OneLineListItem:
-                    text: "Item 3"
+            MDTopAppBar:
+                title: "Schedules"
+                left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_y: None
+                height: dp(48)
+
+                Spinner:
+                    id : year
+                    text:'Year'
+                    values:["2022","2023"]
+                    on_text: root.year_clicked(year.text)
+
+                Spinner:
+                    id: month
+                    text:'Month'
+                    values:["January","February","March","April","May","June","July","August","September","October","November","December"]
+                    on_text: root.month_clicked(month.text)
+
+                
+            ScrollView:
+                MDList:
+                    OneLineIconListItem:
+                        text: "Day 1"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 2"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 3"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 4"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 5"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 6"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    OneLineIconListItem:
+                        text: "Day 7"
+                        ImageLeftWidget: #256x256 png image only!!!!
+                            source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                    
+                    
+                    
