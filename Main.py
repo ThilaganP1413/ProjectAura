@@ -1,8 +1,6 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen , ScreenManager
-from kivymd.uix.menu import MDDropdownMenu
-from kivy.metrics import dp
 
 class LoginPage(Screen):
     pass
