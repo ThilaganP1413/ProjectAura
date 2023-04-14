@@ -9,16 +9,25 @@ class HomePage(Screen):
     pass
 
 class Exercises(Screen):
-    pass
+    def on_back_button(self):
+        self.manager.current = 'HomePage'
+        self.manager.transition.direction = 'right'
 
 class Progress(Screen):
-    pass
+    def on_back_button(self):
+        self.manager.current = 'HomePage'
+        self.manager.transition.direction = 'right'
 
 class QuickConsult(Screen):
-    pass
+    def on_back_button(self):
+        self.manager.current = 'HomePage'
+        self.manager.transition.direction = 'right'
+
 
 class Schedules(Screen):
-    pass
+    def on_back_button(self):
+        self.manager.current = 'HomePage'
+        self.manager.transition.direction = 'right'
 
 class WindowManager(ScreenManager):
     pass

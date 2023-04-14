@@ -164,6 +164,9 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
+                        # on_release: 
+                        #     app.root.current = 'Session'
+                        #     app.root.transition.direction = 'left'
 
                         MDLabel:
                             text: 'Start Session'
@@ -184,7 +187,9 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
-                        on_release: app.root.current = 'Schedules'
+                        on_release: 
+                            app.root.current = 'Schedules'
+                            app.root.transition.direction = 'left'
 
                         MDLabel:
                             text: 'Schedules'
@@ -218,7 +223,9 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
-                        on_release: app.root.current = 'Progress'
+                        on_release: 
+                            app.root.current = 'Progress'
+                            app.root.transition.direction = 'left'
 
                         MDLabel:
                             text: 'Progress'
@@ -239,7 +246,9 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
-                        on_release: app.root.current = 'Exercises'
+                        on_release: 
+                            app.root.current = 'Exercises'
+                            app.root.transition.direction = 'left'
 
                         MDLabel:
                             text: 'Exercises'
@@ -273,7 +282,9 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5}
                         md_bg_color: (161/255, 231/255, 240/255, 1)
                         orientation : 'vertical'
-                        on_release: app.root.current = 'QuickConsult'
+                        on_release: 
+                            app.root.current = 'QuickConsult'
+                            app.root.transition.direction = 'left'
 
                         MDLabel:
                             text: 'Quick Consult'
@@ -377,115 +388,109 @@ ScreenManager:
 #Progress STARTS ------------------------------------------------------------------
 <Progress>:
     name:'Progress'
+    BoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Progress"
+            left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
 #Exercises STARTS ------------------------------------------------------------------
 <Exercises>:
     name:'Exercises'
-    ScrollView:
-        MDList:
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
+    BoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Exercises"
+            left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+    
+        ScrollView:
+            MDList:
+                OneLineIconListItem:
+                    text: "Squats"
+                    ImageLeftWidget: #256x256 image only!!!!
+                        source: "Assets\squat 256x256 image.png"
 #QuickConsult STARTS ------------------------------------------------------------------
 <QuickConsult>:
     name:'QuickConsult'
     BoxLayout:
-        orientation: 'vertical'
-        ScrollView:
-            MDList:
-                id: message_list
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Consult"
+            left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+        
         BoxLayout:
-            orientation: 'horizontal'
-            MDTextField:
-                id: message_text
-                hint_text: 'Type a message...'
-            MDFloatingActionButton:
-                icon: 'send'
-                #on_release: app.send_message()
+            orientation: 'vertical'
+            ScrollView:
+                MDList:
+                    id: message_list
+            BoxLayout:
+                orientation: 'horizontal'
+                MDTextField:
+                    id: message_text
+                    hint_text: 'Type a message...'
+                MDFloatingActionButton:
+                    icon: 'send'
+                    #on_release: app.send_message()
 
 
 #Schedules STARTS ------------------------------------------------------------------
 <Schedules>:
     name:'Schedules'
-    ScrollView:
-        MDList:
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
-            OneLineListItem:
-                text: "Item 1"
-            OneLineListItem:
-                text: "Item 2"
-            OneLineListItem:
-                text: "Item 3"
+    BoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Schedules"
+            left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+            
+        ScrollView:
+            MDList:
+                TwoLineIconListItem:
+                    text: "Item 1"
+                    secondary_text:'line2'
+                    ImageLeftWidget: #256x256 png image only!!!!
+                        source: "D:\Software\Coding\KivyMD\kivymd\images\logo\kivymd-icon-256.png"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
+                OneLineListItem:
+                    text: "Item 1"
+                OneLineListItem:
+                    text: "Item 2"
+                OneLineListItem:
+                    text: "Item 3"
