@@ -49,30 +49,110 @@ ScreenManager:
                         md_bg_color: 201/255,103/155,240/255,0.3
 
                     
+                    BoxLayout:
+                        orientation:'horizontal'
+                        size_hint: 1,0.25
+                        padding:dp(10)
+                        spacing:dp(10)
+                        pos_hint:{'center_x':0.5,'top':1}
+
+                        MDIconButton:
+                            id: icon
+                            icon: "account-circle"
+                            icon_size: "64dp"
+                            pos_hint: {"center_x": 0.5, 'center_y':0.5}
+                            theme_icon_color: "Custom"
+                            icon_color: "black"
+
+
+                        GridLayout:
+                            rows:2
+                            size_hint_y: 0.7
+                            pos_hint_y:{'center_y':0.5}
+                            MDLabel:
+                                text:'Welcome,'
+                                font_style:'Subtitle2'
+                                valign: 'middle'
+                                size_hint_y: None
+                                height: self.texture_size[1]
+
+                            MDLabel:
+                                text:'USER'
+                                font_style:'Subtitle1'
+                                font_size:'40sp'
+                                valign: 'middle'
+                                size_hint_y: None
+                                height: self.texture_size[1]
+
+                        MDIconButton:
+                            icon:'dots-vertical'
+                            pos_hint:{'center_x':1,'top':1}
+
 
                     GridLayout:
                         cols:2
                         padding: dp(10)
                         spacing: dp(10)
                         size_hint: 1, 0.15
-                        pos_hint:{'top': 0.75}
+                        pos_hint:{'top': 0.8}
 
                         MDCard: 
-                            md_bg_color: 1,1,1,0.7
-                            MDFlatButton:
-                                text:'hello'
+                            md_bg_color: 1,1,1,0.3
+                            MDIconButton:
+                                icon:'calendar-clock'
+                                icon_size: "30dp"
+                                pos_hint: {"center_x": 0.5, 'center_y':0.5}
+                                theme_icon_color: "Custom"
+                                icon_color: "blue"
+
+                            GridLayout:
+                                rows:2
+                                size_hint_y: 0.8
+                                pos_hint_y:{'center_y':0.7}
+
+                                MDLabel:
+                                    text:'Next Session:'
+                                    font_size: '12sp'
+                                    size_hint_y: None
+                                    height: self.texture_size[1]
+
+                                MDLabel:
+                                    text:'00:00:00'
+                                    font_size: '23sp'
+                                    size_hint_y: None
+                                    height: self.texture_size[1]
+
                         MDCard: 
-                            md_bg_color: 1,1,1,0.7
-                            MDFlatButton:
-                                text:'hello'
+                            md_bg_color: 1,1,1,0.3
+
+                            MDIconButton:
+                                icon:'server-off' #use'server' for online mode
+                                icon_size: "30dp"
+                                pos_hint: {"center_x": 0.5, 'center_y':0.5}
+                                theme_icon_color: "Custom"
+                                icon_color: "red"
+
+                            BoxLayout:
+                                orientation:'vertical'
+                                size_hint_y:0.5
+                                pos_hint:{'center_y':0.6}
+
+                                MDLabel:
+                                    text:'Offline Mode'
+                                    font_size: '16sp'
+                                    size_hint_y: None
+                                    height: self.texture_size[1]
+
+
                     BoxLayout:
                         orientation:'vertical'
                         padding: dp(20)
                         spacing: dp(10)
-                        size_hint: 1, 0.3
+                        size_hint: 1, 0.2
+                        pos_hint:{'top':0.55}
 
                         MDCard: 
-                            md_bg_color: 1,0,0,0.3
+                            md_bg_color: 1,194/255,234/255,1
                             MDFlatButton:
                                 text:'hello'
 
