@@ -1,0 +1,97 @@
+#:kivy 2.0.0
+ScreenManager:
+    id: screen_manager
+    HomeScreen:
+
+<HomeScreen>:
+    name:'HomeScreen'
+    BoxLayout:
+        orientation:'vertical'
+
+        MDBottomNavigation:
+            id:bottom_nav
+            text_color_normal: 1, 0, 0, 0.3
+            panel_color: "#f7e9f5"
+            selected_color_background: 0,0,0,0
+            text_color_active: 1,0,0,1
+    
+            MDBottomNavigationItem:
+                id:home_tab
+                name:'Home'
+                text:'Home'
+                icon:'home'
+                on_tab_press: app.root.current_screen.enter_tab(self)
+                on_leave: app.root.current_screen.leave_tab(self)
+
+                FloatLayout:
+                    size_hint: 1,1
+                    spacing : dp(10)
+
+                    MDCard:
+                        size_hint: 2, 0.7
+                        radius: [dp(500), dp(500), dp(500), dp(500)]
+                        pos_hint: {'center_x': 0.7, 'center_y': 0.95}
+                        elevation: 0
+                        md_bg_color: 201/255,103/155,240/255,0.7
+
+                    MDCard:
+                        size_hint: 2, 0.75
+                        radius: [dp(500), dp(500), dp(500), dp(500)]
+                        pos_hint: {'center_x': 0.7, 'center_y':0.95}
+                        elevation: 0
+                        md_bg_color: 201/255,103/155,240/255,0.5
+
+                    MDCard:
+                        size_hint: 2, 0.8
+                        radius: [dp(500), dp(500), dp(500), dp(500)]
+                        pos_hint: {'center_x': 0.7, 'center_y': 0.95}
+                        elevation: 0
+                        md_bg_color: 201/255,103/155,240/255,0.3
+
+                    
+
+                    GridLayout:
+                        cols:2
+                        padding: dp(10)
+                        spacing: dp(10)
+                        size_hint: 1, 0.15
+                        pos_hint:{'top': 0.75}
+
+                        MDCard: 
+                            md_bg_color: 1,1,1,0.7
+                            MDFlatButton:
+                                text:'hello'
+                        MDCard: 
+                            md_bg_color: 1,1,1,0.7
+                            MDFlatButton:
+                                text:'hello'
+                    BoxLayout:
+                        orientation:'vertical'
+                        padding: dp(20)
+                        spacing: dp(10)
+                        size_hint: 1, 0.3
+
+                        MDCard: 
+                            md_bg_color: 1,0,0,0.3
+                            MDFlatButton:
+                                text:'hello'
+
+#------------------------------------------------------------------------------------------------------
+
+            MDBottomNavigationItem:
+                id: consult_tab
+                name:'Consult'
+                text:'Consult'
+                icon:'message-outline'
+                on_tab_press: app.root.current_screen.enter_tab(self)
+                on_leave: app.root.current_screen.leave_tab(self)
+
+#-------------------------------------------------------------------------------------------------------
+
+            MDBottomNavigationItem:
+                id: community_tab
+                name:'Community'
+                text:'Community'
+                icon:'account-group-outline'
+                on_tab_press: app.root.current_screen.enter_tab(self)
+                on_leave: app.root.current_screen.leave_tab(self)

@@ -1,0 +1,34 @@
+from kivy.lang import Builder
+from kivymd.app import MDApp
+from kivy.uix.screenmanager import Screen , ScreenManager
+
+class HomeScreen(Screen):
+
+    def leave_tab(self,nav_item):
+        if nav_item.name == 'Home':
+            nav_item.icon = 'home-outline'
+        if nav_item.name == 'Consult':
+            nav_item.icon = 'message-outline'
+        if nav_item.name == 'Communiy':
+            nav_item.icon = 'account-group-outline'
+
+    def enter_tab(self, nav_item):
+        if nav_item.name == 'Home':
+            nav_item.icon = 'home'
+        if nav_item.name == 'Consult':
+            nav_item.icon = 'message'
+        if nav_item.name == 'Communiy':
+            nav_item.icon = 'account-group'
+
+
+        
+class WindowManager(ScreenManager):
+    pass
+
+
+class Aura(MDApp):
+    def build(self):
+        return Builder.load_file('main.kv')
+    
+
+Aura().run()
