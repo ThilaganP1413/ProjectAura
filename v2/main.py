@@ -11,6 +11,8 @@ class HomeScreen(Screen):
             nav_item.icon = 'message-outline'
         if nav_item.name == 'Communiy':
             nav_item.icon = 'account-group-outline'
+        if nav_item.name == 'Account':
+            nav_item.icon = 'account-cog-outline'
 
     def enter_tab(self, nav_item):
         if nav_item.name == 'Home':
@@ -19,6 +21,8 @@ class HomeScreen(Screen):
             nav_item.icon = 'message'
         if nav_item.name == 'Communiy':
             nav_item.icon = 'account-group'
+        if nav_item.name == 'Account':
+            nav_item.icon = 'account-cog'
 
 
         
