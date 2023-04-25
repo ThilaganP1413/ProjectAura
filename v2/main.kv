@@ -2,6 +2,9 @@
 ScreenManager:
     id: screen_manager
     HomeScreen:
+    ProgressScreen:
+    RecordsScreen:
+    SessionScreen:
 
 <HomeScreen>:
     name:'HomeScreen'
@@ -33,6 +36,7 @@ ScreenManager:
                         pos_hint: {'center_x': 0.5, 'center_y': 1.05}
                         elevation: 0
                         md_bg_color: 244/255,157/255,162/255,0.3
+
 
                     MDCard:
                         size_hint: 2, 1
@@ -100,8 +104,11 @@ ScreenManager:
 
                         MDCard:
                             md_bg_color:1,1,1,1
-                            elevation:0.4
+                            elevation:1
                             padding:dp(10)
+                            on_release: 
+                                app.root.current = 'SessionScreen'
+                                app.root.transition.direction = 'left'
 
                             GridLayout:
                                 rows:2
@@ -141,8 +148,11 @@ ScreenManager:
 
                         MDCard:
                             md_bg_color:1,1,1,1
-                            elevation:0.4
+                            elevation:1
                             padding:dp(10)
+                            on_release: 
+                                app.root.current = 'RecordsScreen'
+                                app.root.transition.direction = 'left'
 
                             GridLayout:
                                 rows:2
@@ -182,8 +192,11 @@ ScreenManager:
 
                         MDCard:
                             md_bg_color:1,1,1,1
-                            elevation:0.4 
+                            elevation:1
                             padding:dp(10)
+                            on_release: 
+                                app.root.current = 'ProgressScreen'
+                                app.root.transition.direction = 'left'
 
                             GridLayout:
                                 rows:2
@@ -353,6 +366,7 @@ ScreenManager:
             #-------------------------------------------------------------------------------------------------------
 
             MDBottomNavigationItem:
+
                 id: profile_tab
                 name:'Account'
                 text:'Account'
@@ -365,9 +379,10 @@ ScreenManager:
                     padding:dp(20)
 
                     FloatLayout:
+
                         MDCard:
                             md_bg_color:244/255,157/255,162/255,1
-                            size_hint_y:0.3
+                            size_hint_y:0.5
                             pos_hint:{'top':1,'center_x':0.5}
                             elevation:2
                         MDIcon:
@@ -387,7 +402,7 @@ ScreenManager:
                         GridLayout:
                             rows:3
                             pos_hint:{'top':0.95,'center_x':0.55}
-                            size_hint:0.6, 0.2
+                            size_hint:0.6, 0.4
 
                             MDLabel:
                                 text:'Username'
@@ -406,37 +421,121 @@ ScreenManager:
                                 font_name:'Assets/Montserrat-Regular.ttf'
                                 theme_text_color: "Custom"
                                 text_color: "white"
-                        BoxLayout:
-                            orientation:'vertical'
-                            padding:dp(20)
-                            MDLabel:
-                                text:'Settings'
-                                font_name:'Assets/Montserrat-Bold.ttf'
-                                size_hint_y:None
-                                height: 40
-                                
-                            MDList:
-                                OneLineAvatarIconListItem:
-                                    text:"Privacy"
-                                    IconRightWidget:
-                                        icon:'chevron-right'
+                    BoxLayout:
+                        orientation:'vertical'
+                        padding:dp(20)
+                        pos_hint:{'top':1}
+                        MDLabel:
+                            text:'Settings'
+                            font_name:'Assets/Montserrat-Bold.ttf'
+                            size_hint_y:None
+                            height: 40
+                            
+                        MDList:
+                            OneLineAvatarIconListItem:
+                                text:"Privacy"
+                                IconRightWidget:
+                                    icon:'chevron-right'
 
-                                OneLineAvatarIconListItem:
-                                    text:"Notification"
-                                    IconRightWidget:
-                                        icon:'chevron-right'
+                            OneLineAvatarIconListItem:
+                                text:"Notification"
+                                IconRightWidget:
+                                    icon:'chevron-right'
 
-                                OneLineAvatarIconListItem:
-                                    text:"Personalisation"
-                                    IconRightWidget:
-                                        icon:'chevron-right'
+                            OneLineAvatarIconListItem:
+                                text:"Personalisation"
+                                IconRightWidget:
+                                    icon:'chevron-right'
 
-                                OneLineAvatarIconListItem:
-                                    text:"Data Collection"
-                                    IconRightWidget:
-                                        icon:'chevron-right'
+                            OneLineAvatarIconListItem:
+                                text:"Data Collection"
+                                IconRightWidget:
+                                    icon:'chevron-right'
 
-                                OneLineAvatarIconListItem:
-                                    text:"About"
-                                    IconRightWidget:
-                                        icon:'chevron-right'
+                            OneLineAvatarIconListItem:
+                                text:"About"
+                                IconRightWidget:
+                                    icon:'chevron-right'
+
+                        MDWidget:
+                            size_hint_y:root.x*0.2
+
+
+<ProgressScreen>:
+    name:'ProgressScreen'
+    MDBackdrop:
+        id: backdrop
+        left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+        title: "Progress"
+        radius_left: "25dp"
+        radius_right: "25dp"
+        header: False
+        back_layer_color:244/255,157/255,162/255,1
+        
+
+        MDBackdropBackLayer:
+            id: backlayer
+            FitImage:
+                id: bg_image_progress
+                source: "Assets/progress_card.png"
+                size_hint: 0.6,0.6
+                pos_hint: {"center_y": 0.6,'center_x':0.5}
+                keep_ratio: True
+
+
+        MDBackdropFrontLayer:
+            backdrop: backdrop
+
+
+<RecordsScreen>:
+    name:'RecordsScreen'
+    MDBackdrop:
+        id: backdrop
+        left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+        title: "Records"
+        radius_left: "25dp"
+        radius_right: "25dp"
+        header: False
+        back_layer_color:244/255,157/255,162/255,1
+        
+
+        MDBackdropBackLayer:
+            id: backlayer
+            FitImage:
+                id: bg_image_progress
+                source: "Assets/progress_card.png"
+                size_hint: 0.6,0.6
+                pos_hint: {"center_y": 0.6,'center_x':0.5}
+                keep_ratio: True
+
+
+        MDBackdropFrontLayer:
+            backdrop: backdrop
+
+
+<SessionScreen>:
+    name:'SessionScreen'
+    MDBackdrop:
+        id: backdrop
+        left_action_items: [["arrow-left", lambda x: app.root.current_screen.on_back_button()]]
+        title: "Today's Session"
+        radius_left: "25dp"
+        radius_right: "25dp"
+        header: False
+        back_layer_color:244/255,157/255,162/255,1
+        
+
+        MDBackdropBackLayer:
+            id: backlayer
+            FitImage:
+                id: bg_image_progress
+                source: "Assets/progress_card.png"
+                size_hint: 0.6,0.6
+                pos_hint: {"center_y": 0.6,'center_x':0.5}
+                keep_ratio: True
+
+
+        MDBackdropFrontLayer:
+            backdrop: backdrop
+
+

@@ -24,13 +24,27 @@ class HomeScreen(Screen):
         if nav_item.name == 'Account':
             nav_item.icon = 'account-cog'
 
+class ProgressScreen(Screen):
+    def on_back_button(self):
+        self.manager.current = 'HomeScreen'
+        self.manager.transition.direction = 'right'
 
+class RecordsScreen(Screen):
+    def on_back_button(self):
+        self.manager.current = 'HomeScreen'
+        self.manager.transition.direction = 'right'
+
+class SessionScreen(Screen):
+    def on_back_button(self):
+        self.manager.current = 'HomeScreen'
+        self.manager.transition.direction = 'right'
         
 class WindowManager(ScreenManager):
     pass
 
 
 class Aura(MDApp):
+    
     def build(self):
         return Builder.load_file('main.kv')
     
