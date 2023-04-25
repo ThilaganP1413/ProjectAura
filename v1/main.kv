@@ -1,4 +1,4 @@
-#:kivy 2.2.0
+#:kivy 2.1.0
 ScreenManager:
     id: screen_manager
     LoginPage:
@@ -14,7 +14,7 @@ ScreenManager:
     MDBoxLayout:
         canvas.before:
             Rectangle:
-                source: "Assets\LightBluePurple_Gradient.png"
+                source: "Assets/LightBluePurple_Gradient.png"
                 pos: self.pos
                 size: self.size
         size_hint:(1,1)
@@ -35,7 +35,7 @@ ScreenManager:
             MDLabel:
                 text: 'Welcome'
                 font_size: 50
-                font_name: "Assets\HomepageBaukasten-Bold.ttf"
+                font_name: "Assets/HomepageBaukasten-Bold.ttf"
                 halign:'center'
                 padding_y : 20
 
@@ -109,7 +109,7 @@ ScreenManager:
                 RoundedRectangle:
                     pos: self.pos
                     size: self.size
-                    source: "Assets\LightBluePurple_Gradient.png"
+                    source: "Assets/LightBluePurple_Gradient.png"
                     radius: [0,0,250,250]
 
             Widget: 
@@ -118,7 +118,7 @@ ScreenManager:
 
             Label:
                 text: 'Next Session In:'
-                font_name:"Assets\HomepageBaukasten-Book.ttf"
+                font_name:"Assets/HomepageBaukasten-Book.ttf"
                 font_size: sp(20)* root.width / dp(360)
                 color: 1, 1, 1, 1
                 size_hint_y: None
@@ -127,7 +127,7 @@ ScreenManager:
 
             Label:
                 text: '00 : 00 : 00 : 00'
-                font_name:"Assets\HomepageBaukasten-Book.ttf"
+                font_name:"Assets/HomepageBaukasten-Book.ttf"
                 font_size: sp(30) * root.width / dp(360)
                 color: 1, 1, 1, 1
                 size_hint_y: None
@@ -142,7 +142,7 @@ ScreenManager:
             MDBottomNavigationItem:
                 name:"Sessions"
                 text:"Sessions"
-                icon:"Assets\SessionIcon.png" 
+                icon:"Assets/SessionIcon.png" 
                 BoxLayout:
                     orientation:'vertical'
                     pos_hint :{'center_x': 0.5, 'center_y':0.5}
@@ -170,7 +170,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Start Session'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -193,7 +193,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Schedules'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -206,7 +206,7 @@ ScreenManager:
             MDBottomNavigationItem:
                 name:"Logs"
                 text:"Logs"
-                icon:"Assets\LogsIcon.png"
+                icon:"Assets/LogsIcon.png"
 
                 BoxLayout:
                     orientation:'vertical'
@@ -229,7 +229,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Progress'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -252,7 +252,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Exercises'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -265,7 +265,7 @@ ScreenManager:
             MDBottomNavigationItem:
                 name:"Consult"
                 text:"Consult"
-                icon:"Assets\ConsultIcon.png"
+                icon:"Assets/ConsultIcon.png"
 
                 BoxLayout:
                     orientation:'vertical'
@@ -288,7 +288,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Quick Consult'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -308,7 +308,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Therapist'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'top'
                             halign: 'center'
@@ -321,7 +321,7 @@ ScreenManager:
             MDBottomNavigationItem:
                 name:"Profile"
                 text:"Profile"
-                icon:"Assets\ProfieIcon.png"
+                icon:"Assets/ProfieIcon.png"
 
                 BoxLayout:
                     orientation:'vertical'
@@ -340,7 +340,7 @@ ScreenManager:
 
                         MDLabel:
                             text: 'Profile'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(50)* root.width / dp(360)
                             valign : 'center'
                             halign: 'center'
@@ -358,7 +358,7 @@ ScreenManager:
                         md_bg_color: [161/255, 231/255, 240/255, 1] 
                         MDLabel:
                             text: 'Setting'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(40)* root.width / dp(360)
                             valign : 'center'
                             halign: 'center'
@@ -375,7 +375,7 @@ ScreenManager:
                         md_bg_color: [161/255, 231/255, 240/255, 1] 
                         MDLabel:
                             text: 'About'
-                            font_name : "Assets\BebasNeue-Regular.ttf"
+                            font_name : "Assets/BebasNeue-Regular.ttf"
                             font_size: sp(40)* root.width / dp(360)
                             valign : 'center'
                             halign: 'center'
@@ -409,7 +409,7 @@ ScreenManager:
                 OneLineIconListItem:
                     text: "Squats"
                     ImageLeftWidget: #256x256 image only!!!!
-                        source: "Assets\squat 256x256 image.png"
+                        source: "Assets/squat 256x256 image.png"
 #QuickConsult STARTS ------------------------------------------------------------------
 <QuickConsult>:
     name:'QuickConsult'
@@ -476,12 +476,12 @@ ScreenManager:
                         text: "Session Ended"
                         secondary_text:'3 PM - 4 PM'
                         ImageLeftWidget: #256x256 png image only!!!!
-                            source: "Assets\Days\day1.png"
+                            source: "Assets/Days/day1.png"
                     TwoLineIconListItem:
                         text: "Upcoming Session"
                         secondary_text: '3 PM - 4 PM'
                         ImageLeftWidget: #256x256 png image only!!!!
-                            source: "Assets\Days\day2.png"
+                            source: "Assets/Days/day2.png"
                     TwoLineIconListItem:
                         text: "Upcoming Session"
                         secondary_text: '3 PM - 4 PM'

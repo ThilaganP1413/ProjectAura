@@ -484,7 +484,71 @@ ScreenManager:
 
 
         MDBackdropFrontLayer:
-            backdrop: backdrop
+            FloatLayout:
+                spacing:dp(20)
+                padding:dp(20)
+                BoxLayout:
+                    orientation:'vertical'
+                    size_hint:0.8,0.4
+                    pos_hint:{'top':0.95,'center_x':0.5}
+                    spacing: dp(10)
+                    MDCard:
+                        size_hint: 1, 0.1
+                        elevation:1
+                        #md_bg_color:1,0,0,0.5
+                        BoxLayout:
+                            orientation:'horizontal'
+                            padding:dp(20)
+                            spacing:dp(40)
+                            MDIcon:
+                                icon:'clock'
+                                pos_hint:{'center_y':0.5}
+                                font_size:40
+                            
+                            GridLayout:
+                                rows:2
+                                MDLabel:
+                                    text:'1hr 20mins'
+                                    font_size:'40dp'
+                                    font_name:'Assets/Montserrat-Bold.ttf'
+                                    pos_hint:{'center_x':0.5}
+                                MDLabel:
+                                    text:'of Exercises Done'
+                                    pos_hint:{'center_x':0.5}
+                    MDCard:
+                        size_hint: 1, 0.1
+                        elevation:1
+                        #md_bg_color:1,0,0,0.5
+                        BoxLayout:
+                            orientation:'horizontal'
+                            padding:dp(20)
+                            spacing:dp(40)
+                            MDIcon:
+                                icon:'transfer-up'
+                                pos_hint:{'center_y':0.5}
+                                font_size:40
+                            
+                            GridLayout:
+                                rows:2
+                                MDLabel:
+                                    text:'40 %'
+                                    font_size:'40dp'
+                                    font_name:'Assets/Montserrat-Bold.ttf'
+                                    pos_hint:{'center_x':0.5}
+                                    theme_text_color:'Custom'
+                                    text_color:'lime'
+                                MDLabel:
+                                    text:'Recovered than Last Week'
+                                    pos_hint:{'center_x':0.5}
+
+                FitImage:
+                    id: bg_image_progress
+                    source: "Assets/progressgraph.png"
+                    size_hint: None, None
+                    size: 350,200
+                    pos_hint: {"center_y": 0.3,'center_x':0.5}
+                    keep_ratio : True
+
 
 
 <RecordsScreen>:
@@ -536,6 +600,6 @@ ScreenManager:
 
 
         MDBackdropFrontLayer:
-            backdrop: backdrop
+
 
 
